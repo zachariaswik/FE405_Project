@@ -1,11 +1,9 @@
----
-config:
-  theme: redux
----
-flowchart LR
- subgraph
-        n1["Profile"]
-        n2["Feed"]
-  end
-    A(["Users"])
-    B(["Businesses"])
+Here is a simple flow chart:
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
