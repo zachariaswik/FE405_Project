@@ -1,24 +1,28 @@
-Here is a simple flow chart:
+Edtech diagram
 
 ```mermaid
 flowchart LR
     Student[Student] --> SF
     Teacher[Teacher] --> TF
-    API_GATEWAY['API Gateway]
+    Admin[Admin] --> AF
+    Parent[Parent] --> PF
     
-    TF@{ shape: doc, label: "teacher dashboard"}
-    SF@{ shape: doc, label: "student frontend"}
+    subgraph F[frontends]
+        TF@{ shape: doc, label: "teacher dashboard"}
+        SF@{ shape: doc, label: "student frontend"}
+        AF@{ shape: doc, label: "Admin frontend"}
+        PF@{ shape: doc, label: "Parent frontend"}
+    end
 
-    SF -- API_GATEWAY
-    API_GATEWAY--> TF
+    A[[Auth]]
+    GW[[Gateway]]
+    F -->  GW --> A
+    GW --> CR & Comm & P
 
-    Auth[auth]
-    TF --> Auth
-    SF --> Auth
-
+    CR[[classroom]] --> DB
+    Comm[[Communication]] --> ES[[email-service]] 
+    P[[profile]] --> DB
     DB[(DB)]
-    TF --> DB
-    SF --> DB
-
-
-```
+    
+    
+    
