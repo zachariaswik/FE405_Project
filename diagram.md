@@ -2,6 +2,9 @@ Edtech diagram
 
 ```mermaid
 flowchart LR
+    classDef frontend fill:green
+    classDef auth fill:blue
+    classDef services fill:purple
     Student[Student] --> SF
     Parent[Parent] --> PF
     Teacher[Teacher] --> TF
@@ -9,34 +12,43 @@ flowchart LR
     
     
     subgraph F[client facing]
-        TF@{ shape: doc, label: "teacher"}
-        SF@{ shape: doc, label: "student"}
-        PF@{ shape: doc, label: "Parent"}
-        AF@{ shape: doc, label: "Admin"}
+        
+        TF:::frontend@{ shape: doc, label: "teacher"}
+        SF:::frontend@{ shape: doc, label: "student"}
+        PF:::frontend@{ shape: doc, label: "Parent"}
+        AF:::frontend@{ shape: doc, label: "Admin"}
     end
 
     F -->  GW --> A
     subgraph B[internal]
         P_DB[(User
-        Database)]
+        Database)]:::auth
 
-        A[[Auth]] --> P_DB
-        GW[[Gateway]]    
-        Ass[[TestService]] --> R
+        A[[Auth]]:::auth --> P_DB
+        GW[[Gateway]]:::auth    
+        Ass[[TestService]]:::services --> R
         GW --> CR & Comm & P & Course & Ass
-        CR[[classroomService]] --> R
-        Course[[CourseService]] --> R --> DB
-        Comm[[MessagingService]]
-        P[[UserAccount]] --> P_DB
-        R[[Reporting]] 
+        CR[[classroomService]]:::services --> R
+        Course[[CourseService]]:::services --> R --> DB
+        Comm[[MessagingService]]:::services
+        P[[UserAccount]]:::auth --> P_DB
+        R[[Reporting]]:::services
         DB[(Assessment 
-        Database)]
+        Database)]:::services
 
-        R --> MQ[[ Message Queue]]
+        R --> MQ[[ Message Queue]]:::services
     end
 
     MQ --> Notifications
 
+
+    %% Legend
+    subgraph legend
+        direction LR
+        X[frontend]:::frontend
+        Y[auth]:::auth
+        Z[services]:::services
+    end
 ```
 
     
