@@ -36,8 +36,5 @@ flowchart LR
         S_X[Service Layer]:::services
     end
 
-```
-
-    
 
     
