@@ -13,7 +13,7 @@ sequenceDiagram
 
 
 Question:
-1. There is some algorithm running in ReportingService - SHOULD I show this, or should I add another layer saying something like "StatsComputing" like below.
+1. There is some algorithm running in ReportingService - should I show this, or should I add another layer saying something like ComputeStats below.
 
 
 ```mermaid
