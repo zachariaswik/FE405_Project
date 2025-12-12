@@ -1,4 +1,16 @@
-Edtech diagram
+# MVP
+
+***Student***
+  - Classroom page
+  - Authorization:
+    * Join classroom
+
+***Teacher***
+  - Classroom page
+  - Authorization:
+    * Create Classroom
+    * Create Questions
+
 
 ```mermaid
 flowchart LR
