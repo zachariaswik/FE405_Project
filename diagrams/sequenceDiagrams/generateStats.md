@@ -5,24 +5,8 @@
 sequenceDiagram
     ClassroomService ->>+ ReportingService: generateStudentStats
     ReportingService ->>+ ClassroomDB: getStudentData
-    ClassroomDB ->>- ReportingService: returnStudentData
-    ReportingService ->>+ ClassroomDB: writeStudentStats
-    ClassroomDB ->>- ReportingService: Success
-    ReportingService ->>- ClassroomService: Success
-```
-
-
-Question:
-1. There is some algorithm running in ReportingService - should I show this, or should I add another layer saying something like ComputeStats below.
-
-
-```mermaid
-sequenceDiagram
-    ClassroomService ->>+ ReportingService: generateStudentStats
-    ReportingService ->>+ ClassroomDB: getStudentData
     ClassroomDB ->>- ReportingService: studentData
-    ReportingService ->>+ ComputeStats: studentData
-    ComputeStats ->>- ReportingService: studentStats
+    ReportingService ->> ReportingService: computeStats
     ReportingService ->>+ ClassroomDB: writeStudentStats
     ClassroomDB ->>- ReportingService: Success
     ReportingService ->>- ClassroomService: Success
