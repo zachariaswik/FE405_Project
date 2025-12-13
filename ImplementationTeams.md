@@ -31,7 +31,7 @@ The person in charge of the Admin frontend, will be the team lead and also main 
     * Admin frontend / team lead(1)
 
 
-The backend team would consist of 4 devs. One for each service which directly communicates with the frontend, and two devs on the reportingService/ClassroomDB/MQ services. I would have a teamlead, and more senior, working on the MQ - as this service has a higher risk when in production. 
+The backend team would consist of 4 devs. One for each service which directly communicates with the frontend, and two devs on the reportingService/ClassroomDB/MQ services. I would have the teamlead, being more senior, working on the MQ; as this service has a higher risk when in production. 
 
 * Backend(4)
     * ClassRoomService (1)
@@ -40,7 +40,7 @@ The backend team would consist of 4 devs. One for each service which directly co
         - reportinService + MQ / Teamlead (1)
         - reportinService + classroomDB(1)
 
-Finally, I would have two people team dealing with Security and Quality. We also have the tech lead in this team, who owns the whole product.
+Finally, I would have two people dealing with Security and Quality. We also have the tech lead in this team, who owns the whole product.
 
 * Security/Quality team
     * UserDB & auth (1)
