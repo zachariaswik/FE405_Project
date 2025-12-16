@@ -13,8 +13,8 @@
 
 ```mermaid
 flowchart LR
-    classDef frontend fill:#7ed957,stroke:#333,stroke-width:1px,color:#000
-    classDef services fill:#c084fc,stroke:#333,stroke-width:1px,color:#fff
+    classDef frontend fill:green
+    classDef services fill:purple
 
     %% Users
     Student[Student] --> FE
