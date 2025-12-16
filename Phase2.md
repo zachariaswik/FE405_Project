@@ -70,7 +70,7 @@ flowchart LR
 
       A[[Auth]]:::auth --> P_DB
       GW[[Gateway]]:::auth    
-      Ass[[Test Service]]:::services --> R & DB
+      Ass[[Test Service]]:::services --> DB
       GW --> CR & Comm & P & Course & Ass
       CR[[classroom Service]]:::services --> R & DB
       Course[[Course Service]]:::services --> R --> DB
