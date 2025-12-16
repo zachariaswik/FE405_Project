@@ -70,23 +70,21 @@ flowchart LR
 
       A[[Auth]]:::auth --> P_DB
       GW[[Gateway]]:::auth    
-      Ass[[TestService]]:::services --> R
+      Ass[[Test Service]]:::services --> R
       GW --> CR & Comm & P & Course & Ass
-      CR[[classroomService]]:::services --> R
-      Course[[CourseService]]:::services --> R --> DB
-      Comm[[MessagingService]]:::services
-      P[[UserAccount]]:::auth --> P_DB
-      R[[Reporting]]:::services 
-      DB[(Assessment 
+      CR[[classroom Service]]:::services --> R
+      Course[[Course Service]]:::services --> R --> DB
+      Comm[[Messaging Service]]:::services
+      P[[User Account]]:::auth --> P_DB
+      R[[Reporting Service]]:::services 
+      DB[(Course 
       Database)]:::services
 
       R --> MQ[[ Message Queue]]:::services & P_DB
   end
-    R --> AnalysisTool
     MQ --> Notifications
 
     subgraph MicroService External Services
-        AnalysisTool
         MQ:::services
         MQ --> ES[[Email Service]]
         MQ --> Notifications
