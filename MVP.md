@@ -43,8 +43,8 @@ flowchart LR
     %% Legend
     subgraph Legend
         direction LR
-        F_X[Frontend Layer]:::frontend
-        S_X[Service Layer]:::services
+        F_X[frontend]:::frontend
+        S_X[services]:::services
     end
 
 
