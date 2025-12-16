@@ -36,7 +36,7 @@ flowchart LR
         AUTH --> FE
 
         %% App routes requests to relevant services
-        GW --> CRS[[Course Service]]:::services --> REP[[Reporting Service]]:::services & CDB & AUTH
+        GW --> CRS[[Course Service]]:::services --> REP[[Reporting Service]]:::services & CDB
         REP --> CDB[(Course Database)]:::services
     end
 
