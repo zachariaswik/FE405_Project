@@ -1,15 +1,14 @@
 # MVP
 
 ***Student***
-  - Classroom page
+  - Course page
   - Authorization:
-    * Join classroom
+    * join course
 
 ***Teacher***
-  - Classroom page
+  - Course page
   - Authorization:
-    * Create Classroom
-    * Create Questions
+    * Create/Edit Course
 
 
 ```mermaid
@@ -37,7 +36,7 @@ flowchart LR
         AUTH --> FE
 
         %% App routes requests to relevant services
-        GW --> CRS[[Classroom Service]]:::services --> REP[[Reporting Service]]:::services & CDB & AUTH
+        GW --> CRS[[Course Service]]:::services --> REP[[Reporting Service]]:::services & CDB & AUTH
         REP --> CDB[(Course Database)]:::services
     end
 
