@@ -76,12 +76,12 @@ flowchart LR
       Course[[Course Service]]:::services --> R --> DB
       Course --> DB
       Comm[[Messaging Service]]:::services
-      P[[User Account]]:::auth --> P_DB
+      P[[User Account]]:::services --> P_DB & R
       R[[Reporting Service]]:::services 
       DB[(Course 
       Database)]:::services
 
-      R --> MQ[[ Message Queue]]:::services & P_DB
+      R --> MQ[[ Message Queue]]:::services
   end
 
     subgraph MicroServices
