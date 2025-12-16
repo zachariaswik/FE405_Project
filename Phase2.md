@@ -70,10 +70,11 @@ flowchart LR
 
       A[[Auth]]:::auth --> P_DB
       GW[[Gateway]]:::auth    
-      Ass[[Test Service]]:::services --> R
+      Ass[[Test Service]]:::services --> R & DB
       GW --> CR & Comm & P & Course & Ass
-      CR[[classroom Service]]:::services --> R
+      CR[[classroom Service]]:::services --> R & DB
       Course[[Course Service]]:::services --> R --> DB
+      Course --> DB
       Comm[[Messaging Service]]:::services
       P[[User Account]]:::auth --> P_DB
       R[[Reporting Service]]:::services 
@@ -82,12 +83,11 @@ flowchart LR
 
       R --> MQ[[ Message Queue]]:::services & P_DB
   end
-    MQ --> Notifications
 
-    subgraph MicroService External Services
+    subgraph MicroServices
         MQ:::services
         MQ --> ES[[Email Service]]
-        MQ --> Notifications
+        MQ --> PushNoticiations[[Push Notifications]]
         
     end
 
